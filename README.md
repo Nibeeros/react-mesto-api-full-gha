@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <158.160.115.4>
+IP <158.160.115.4>
 
 Frontend https://nibeeros.nomoreparties.co/
 
