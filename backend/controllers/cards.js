@@ -39,13 +39,18 @@ const deleteCard = (req, res, next) => {
       return Card.deleteOne(card)
         .then(() => res.status(OK_CODE).send(card))
         .catch((err) => {
-          if (err.name === 'ValidationError') {
+          if (err.name === 'CastError') {
             next(new BadRequestErr('Не получилось удалить'));
           }
           return next(err);
         });
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        return next(new BadRequestErr('Не получилось удалить, некоректный id карточки'));
+      }
+      return next(err);
+    });
 };
 
 const putLikeCard = (req, res, next) => {

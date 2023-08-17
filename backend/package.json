@@ -10,7 +10,7 @@
     "lint": "npx eslint ."
   },
   "keywords": [],
-  "author": ". Cohort 64",
+  "author": "Панюков Владислав",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

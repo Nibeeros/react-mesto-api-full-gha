@@ -14,8 +14,6 @@ router.use(auth);
 router.use(usersRouter);
 router.use(cardsRouter);
 
-router.use('*', () => {
-  throw new NotFoundErr('Page Not Found');
-});
+router.use((req, res, next) => { next(new NotFoundErr('Такой страницы не существует')); });
 
 module.exports = router;
